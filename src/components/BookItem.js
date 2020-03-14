@@ -37,14 +37,14 @@ export default class BookItem extends React.Component {
       description,
       pageCount,
       thumbnail: imageLinks.thumbnail,
-      select: JSON.parse(localStorage.getItem(`saveSelected${id}`))
+      select: JSON.parse(localStorage.getItem(`saveSelected-${id}`))
     });
   }
 
   select() {
     const currentSelect = this.state.select;
     this.setState({ select: !currentSelect });
-    localStorage.setItem(`saveSelected${this.props.id}`, !currentSelect);
+    localStorage.setItem(`saveSelected-${this.props.id}`, !currentSelect);
   }
 
   render() {
