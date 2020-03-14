@@ -5,7 +5,6 @@ import './BookItem.css';
 export default class BookItem extends React.Component {
 	constructor(props){
 		super(props)
-		// var retrievedObject = localStorage.getItem('selectStatus');
 		this.state = {
 			id: '',
 			title: '',
@@ -16,10 +15,9 @@ export default class BookItem extends React.Component {
 			thumbnail:'',
 			select: false
 		}
-	
+
 		this.select = this.select.bind(this);
 	}
-
 
 	async componentDidMount() {
 		const {title, subtitle, authors, description, pageCount,imageLinks} = this.props.volumeInfo;

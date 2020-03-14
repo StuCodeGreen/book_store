@@ -42,7 +42,8 @@ class BookList extends React.Component {
 					{featuredBooks.map( featuredBook => 
 							<FeaturedItem
 							key={featuredBook.id}
-							volumeInfo = {featuredBook.volumeInfo}					
+							volumeInfo = {featuredBook.volumeInfo}		
+							id= {featuredBook.id}			
 							/>
 						)}
 				</div>
