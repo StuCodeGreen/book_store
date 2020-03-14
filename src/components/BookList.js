@@ -7,19 +7,27 @@ class BookList extends React.Component {
 		super(props);
 		this.state = {
 			url: 'https://www.googleapis.com/books/v1/volumes?q=HTML5',
-			books: []
+			books: [],
+			featured:null
 		};
 	}
 
 	async componentDidMount() {
     const res = await axios.get(this.state.url);
-    this.setState({ books: res.data.items });
+		this.setState({ 
+			books: res.data.items,
+		 	featured:res.data.items.slice(Math.max(res.data.items.length -2,0))
+		});
+
+		
+
 	}
-	
+
 	render(){
 		return(
 			<React.Fragment>
 				<div>
+
 				{this.state.books.map(book => 
 					<BookItem
 					key={book.id}
