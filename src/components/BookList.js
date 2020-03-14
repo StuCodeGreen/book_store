@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import BookItem from './BookItem';
+import FeaturedItem from './FeaturedItem';
 
 class BookList extends React.Component {
 	constructor(props) {
@@ -8,7 +9,7 @@ class BookList extends React.Component {
 		this.state = {
 			url: 'https://www.googleapis.com/books/v1/volumes?q=HTML5',
 			books: [],
-			featured:null
+			featured:[]
 		};
 	}
 
@@ -24,6 +25,9 @@ class BookList extends React.Component {
 	}
 
 	render(){
+
+
+
 		return(
 			<React.Fragment>
 				<div>
@@ -34,9 +38,15 @@ class BookList extends React.Component {
 					volumeInfo = {book.volumeInfo}
 					id={book.id}
 					
-					/>
-					
+					/>							
 					)}
+	
+					{this.state.featured.map( featuredBook => 
+							<FeaturedItem
+							key={featuredBook.id}
+							volumeInfo = {featuredBook.volumeInfo}							
+							/>
+						)}
 
 				</div>
 		</React.Fragment>
