@@ -15,8 +15,8 @@ class BookList extends React.Component {
 	async componentDidMount() {
     const res = await axios.get(this.state.url);
 		this.setState({ 
-			books: res.data.items,
-		 	featured:res.data.items.slice(Math.max(res.data.items.length -2,0))
+			books: res.data.items.slice(0,res.data.items.length-2),
+		 	featured:res.data.items.slice(res.data.items.length -2)
 		});
 
 		
