@@ -28,7 +28,12 @@ export default class BookItem extends React.Component {
   render() {
     return (
 			<div>
-	<h6>{this.state.title}</h6>
+	<p>{this.state.title}</p>
+	<p>{this.state.subtitle}</p>
+	<p>{this.state.author}</p>
+	<p>{this.state.description}</p>
+	<p>{this.state.pageCount}</p>
+	<img src={this.state.thumbnail} alt=""/>
 
 			</div>
 	
