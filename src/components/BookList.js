@@ -9,8 +9,10 @@ class BookList extends React.Component {
 		this.state = {
 			url: 'https://www.googleapis.com/books/v1/volumes?q=HTML5',
 			books: [],
-			featured:[]
+			featured:[],
 		};
+
+		// this.select = this.select.bind(this);
 	}
 
 	async componentDidMount() {
@@ -19,37 +21,32 @@ class BookList extends React.Component {
 			books: res.data.items.slice(0,res.data.items.length-2),
 		 	featured:res.data.items.slice(res.data.items.length -2)
 		});
-
 		
-
 	}
 
 	render(){
 
-
+		const books = this.state.books;
+		const featuredBooks = this.state.featured;
 
 		return(
-			<React.Fragment>
 				<div>
-
-				{this.state.books.map(book => 
+				{books.map(book => 
 					<BookItem
 					key={book.id}
 					volumeInfo = {book.volumeInfo}
 					id={book.id}
-					
 					/>							
 					)}
 	
-					{this.state.featured.map( featuredBook => 
+					{featuredBooks.map( featuredBook => 
 							<FeaturedItem
 							key={featuredBook.id}
-							volumeInfo = {featuredBook.volumeInfo}							
+							volumeInfo = {featuredBook.volumeInfo}					
 							/>
 						)}
-
 				</div>
-		</React.Fragment>
+	
 		);
 	
 	}

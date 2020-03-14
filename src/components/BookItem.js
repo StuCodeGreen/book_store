@@ -1,17 +1,27 @@
 import React from 'react';
+import './BookItem.css';
 
 
 export default class BookItem extends React.Component {
-	state = {
-		title: '',
-		subtitle: '',
-		authors: '',
-		description:'',
-		pageCount:'',
-		thumbnail:''
+	constructor(props){
+		super(props)
+		this.state = {
+			title: '',
+			subtitle: '',
+			authors: '',
+			description:'',
+			pageCount:null,
+			thumbnail:'',
+			select: false
+		}
+
+		this.select = this.select.bind(this);
 	}
+
+
 	async componentDidMount() {
-		const {title, subtitle, authors, description, pageCount,imageLinks} = this.props.volumeInfo; 
+		const {title, subtitle, authors, description, pageCount,imageLinks} = this.props.volumeInfo;
+	
 		console.log(imageLinks.thumbnail);
 		
 		this.setState({
@@ -22,11 +32,16 @@ export default class BookItem extends React.Component {
 			pageCount,
 			thumbnail:imageLinks.thumbnail	
 		});
-  }
+	}
+	
+	select(e){
+		const currentSelect = this.state.select;
+		this.setState({select: !currentSelect});
+	};
 
   render() {
     return (
-			<div>
+	<div onClick={this.select} className={this.state.select ? 'selected' : null}>
 	<p>{this.state.title}</p>
 	<p>{this.state.subtitle}</p>
 	<p>{this.state.authors}</p>
