@@ -28,27 +28,40 @@ class BookList extends React.Component {
 
     return (
       <div className="container">
-				<h1 className="header">The Book Store</h1>
-				<div className="books-container">
-					<div className="book-cards">
-        {books.map(book => (
-				
- 						<BookItem key={book.id} volumeInfo={book.volumeInfo} id={book.id} />
-				
-         
-        ))}
-				</div>
-					</div>
-					<div  className="featured-container">
-						<h2>Featured</h2>
-        {featuredBooks.map(featuredBook => (
-          <FeaturedItem
-            key={featuredBook.id}
-            volumeInfo={featuredBook.volumeInfo}
-            id={featuredBook.id}
-          />
-        ))}
-				</div>
+        <h1 className="header">The Book Store</h1>
+			
+				<nav className="navigation">
+				<input class="menu-btn" type="checkbox" id="menu-btn" />
+				<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+				<ul class="menu">
+					<li><a href="#work">Our Work</a></li>
+					<li><a href="#about">About</a></li>
+					<li><a href="#careers">Careers</a></li>
+					<li><a href="#contact">Contact</a></li>
+				</ul>
+			</nav>
+			
+        <div className="books-container">
+          <div className="book-cards">
+            {books.map(book => (
+              <BookItem
+                key={book.id}
+                volumeInfo={book.volumeInfo}
+                id={book.id}
+              />
+            ))}
+          </div>
+        </div>
+        <div className="featured-container">
+          <h2>Featured</h2>
+          {featuredBooks.map(featuredBook => (
+            <FeaturedItem
+              key={featuredBook.id}
+              volumeInfo={featuredBook.volumeInfo}
+              id={featuredBook.id}
+            />
+          ))}
+        </div>
       </div>
     );
   }

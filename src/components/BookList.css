@@ -1,62 +1,74 @@
-.container h1, .featured-container h2 {
+.container h1,
+.featured-container h2 {
 	text-align: center;
 }
+
+p {
+	margin: 5px;
+	font-size: 12px;
+}
+
 .header {
-	grid-area:header
+	grid-area: header;
+	margin-bottom:0px;
+}
+
+.navigation{
+	grid-area: menu;
 }
 
 .books-container {
-	grid-area:books;
-	
+	grid-area: books;
 }
 
 .featured-container {
-	grid-area:featured;
-	background:violet;
+	grid-area: featured;
+	background: violet;
 }
 
 .container {
-  display:grid;
-  grid-template-columns: auto;
+	display: grid;
+	grid-template-columns: auto;
 	grid-template-rows: auto;
-	grid-template-areas: 
-	"header"
-	"featured"
-	"books"
-	"footer";
-	grid-gap:10px;
-	/* margin: 5px 50px; */
+	grid-template-areas:
+		"header"
+		"menu"
+		"featured"
+		"books"
+		"footer";
+	grid-gap: 10px;
 }
 
 .featured-card .thumbnail {
-	grid-area:thumbnail
+	grid-area: thumbnail
 }
 
 .featured-card .title {
-	grid-area:title;	
+	grid-area: title;
 }
 
-.featured-card .author{
-	grid-area:author;
-}
-.featured-card .pages{
-	grid-area:pages;
+.featured-card .author {
+	grid-area: author;
 }
 
-.featured-card .description{
-	grid-area:description;
+.featured-card .pages {
+	grid-area: pages;
 }
 
-.featured-card div{
-	display:grid;
-  grid-template-columns: auto;
+.featured-card .description {
+	grid-area: description;
+}
+
+.featured-card div {
+	display: grid;
+	grid-template-columns: auto;
 	grid-template-rows: auto;
-	grid-template-areas: 
-	"thumbnail"
-	"title"
-	"author"
-	"pages"
-	"description";
+	grid-template-areas:
+		"thumbnail"
+		"title"
+		"author"
+		"pages"
+		"description";
 	padding: 10px;
 	justify-items: center;
 	text-align: center;
@@ -65,65 +77,167 @@
 }
 
 .book-cards .thumbnail {
-	grid-area:thumbnail;
+	grid-area: thumbnail;
 }
 
 .book-cards .title {
-	grid-area:title;	
+	grid-area: title;
 }
 
-.book-cards .author{
-	grid-area:author;
-}
-.book-cards .pages{
-	grid-area:pages;
+.book-cards .author {
+	grid-area: author;
 }
 
-.book-cards .description{
-	grid-area:description;
+.book-cards .pages {
+	grid-area: pages;
 }
 
-.book-cards div{
-	display:grid;
-  grid-template-columns: auto;
+.book-cards .description {
+	grid-area: description;
+}
+
+.book-cards div {
+	display: grid;
+	grid-template-columns: auto;
 	grid-template-rows: auto;
-	grid-template-areas: 
-	"thumbnail title "
-	"thumbnail author "
-	"thumbnail pages "
-	"thumbnail description";
+	grid-template-areas:
+		"thumbnail title "
+		"thumbnail author "
+		"thumbnail pages "
+		"thumbnail description";
 	margin: 10px 0px;
 	padding: 10px;
 	justify-items: start;
 	background: red;
 }
 
- p {
-	margin:5px;
-	font-size:12px;
+#selected {
+	background:pink;
 }
+
+/* Navigation */
+
+.navigation ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.navigation ul li {
+	width: 100%;
+	text-align: center;
+}
+
+.navigation li a {
+  display: block;
+  padding: 20px 20px;
+	text-decoration: none;
+	color:black;
+}
+
+.navigation li a:hover,
+.navigation .menu-btn:hover {
+  background-color: #f4f4f4;
+}
+
+/* menu */
+
+.navigation .menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;	
+  max-height: 0;
+  transition: max-height .3s ease-out;
+}
+
+/* hamburger */
+
+.navigation .menu-icon {
+  cursor: pointer;
+	display: flex;
+	justify-content: center;
+  padding: 10px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.navigation .menu-icon .navicon {
+  background: #333;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .3s ease-out;
+  width: 18px;
+}
+
+.navigation .menu-icon .navicon:before,
+.navigation .menu-icon .navicon:after {
+  background: #333;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .3s ease-out;
+  width: 100%;
+}
+
+.navigation .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.navigation .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* hamburger btn */
+
+.navigation .menu-btn {
+  display: none;
+}
+
+.navigation .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.navigation .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.navigation .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.navigation .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.navigation .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.navigation .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
 
 /* M E D I A  Q U E R I E S */
 
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {  
+@media (min-width: 576px) {}
 
-}
- 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
-@media (min-width: 768px) {  
- 
-}
- 
+@media (min-width: 768px) {}
+
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
+	.menu {
+		display: flex;
+	}
 	.container {
-		grid-template-areas: 
-		"header header header"
-		/* "menu menu menu menu" */
-    "books books featured"
-    /* "books books featured" */
-    "footer footer footer";
+		grid-template-areas:
+			"header header header"
+			"menu menu menu"
+			"books books featured"
+			"footer footer footer";
 	}
 
 	.book-cards {
@@ -133,32 +247,45 @@
 	}
 
 	.book-cards div {
-		margin:5px;
+		margin: 5px;
 	}
 
-	.featured-container{
+	.featured-container {
 		margin: 5px;
 		width: 250px;
 	}
 
-	.featured-card div{
-		grid-template-areas: 
-		"title"
-		"author"
-		"pages"
-		"description"
-		"thumbnail";
+	.featured-card div {
+		grid-template-areas:
+			"title"
+			"author"
+			"pages"
+			"description"
+			"thumbnail";
 	}
 
 	p {
-		margin:5px;
-		font-size:15px;
+		margin: 5px;
+		font-size: 15px;
 	}
-}
- 
-/* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  
-    
+
+	/* Navigation */
+	
+	.navigation ul li {
+		width: auto;
+	}
+
+  .navigation li a {
+    padding: 20px 30px;
+  }
+  .navigation .menu {
+		flex-direction: row;
+    justify-content: center;
+    max-height: none;
+  }
+  .navigation .menu-icon {
+    display: none;
+  }
 }
 
- 
+
