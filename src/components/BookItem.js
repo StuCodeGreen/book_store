@@ -9,13 +9,14 @@ export default class BookItem extends React.Component {
       title: '',
       subtitle: '',
       authors: '',
-      description: '',
+      description: 'loading',
       pageCount: null,
       thumbnail: '',
       select: false
     };
 
     this.select = this.select.bind(this);
+    this.stringLimit = this.stringLimit.bind(this);
   }
 
   async componentDidMount() {
@@ -34,7 +35,7 @@ export default class BookItem extends React.Component {
       title,
       subtitle,
       authors: authors.join(', '),
-      description,
+      description:description,
       pageCount,
       thumbnail: imageLinks.thumbnail,
       select: JSON.parse(localStorage.getItem(`saveSelected-${id}`))
@@ -45,6 +46,18 @@ export default class BookItem extends React.Component {
     const currentSelect = this.state.select;
     this.setState({ select: !currentSelect });
     localStorage.setItem(`saveSelected-${this.props.id}`, !currentSelect);
+	}
+	
+	stringLimit(str=" ", limit=null) {
+    if (limit == null) {
+      limit = 100;
+    }
+  
+    if (str.length > limit) {
+      return str.substring(0, limit);
+    } else {
+      return str;
+    }
   }
 
   render() {
@@ -56,7 +69,7 @@ export default class BookItem extends React.Component {
         <p>{this.state.title}</p>
         <p>{this.state.subtitle}</p>
         <p>{this.state.authors}</p>
-        <p>{this.state.description}</p>
+        <p>{this.stringLimit(this.state.description,140)}</p>
         <p>{this.state.pageCount}</p>
         <img src={this.state.thumbnail} alt="" />
       </div>
