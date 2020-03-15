@@ -28,7 +28,7 @@ class BookList extends React.Component {
 
     return (
       <div className="container">
-        <h1 className="header"><img src="./book.svg" alt="Book logo" width="50"/> The Book Store</h1>
+        <h1 className="header"><img src="./book.png" alt="Book logo" width="50"/> The Book Store</h1>
 			
 				<nav className="navigation">
 				<input class="menu-btn" type="checkbox" id="menu-btn" />
