@@ -26,32 +26,36 @@ export default class BookItem extends React.Component {
       description,
       pageCount,
       imageLinks
-		} = this.props.volumeInfo;
-		
+    } = this.props.volumeInfo;
+
     const { id } = this.props;
 
     this.setState({
       title,
       subtitle,
       authors: authors.join(', '),
-      description:description,
+      description: description,
       pageCount,
       thumbnail: imageLinks.thumbnail,
       select: JSON.parse(localStorage.getItem(`saveSelected-${id}`))
     });
   }
 
+  // Toggle book selection logic
+
   select() {
     const currentSelect = this.state.select;
     this.setState({ select: !currentSelect });
     localStorage.setItem(`saveSelected-${this.props.id}`, !currentSelect);
-	}
-	
-	stringLimit(str=" ", limit=null) {
+  }
+
+  // String limit for description
+
+  stringLimit(str = ' ', limit = null) {
     if (limit == null) {
       limit = 100;
     }
-  
+
     if (str.length > limit) {
       return str.substring(0, limit);
     } else {
@@ -61,13 +65,14 @@ export default class BookItem extends React.Component {
 
   render() {
     return (
-      <div
-        onClick={this.select}
-        id={this.state.select ? 'selected' : null}
-      >
-        <p className="title">{this.state.title} {this.state.subtitle}</p>
+      <div onClick={this.select} id={this.state.select ? 'selected' : null}>
+        <p className="title">
+          {this.state.title} {this.state.subtitle}
+        </p>
         <p className="authors">{this.state.authors}</p>
-        <p className="description">{this.stringLimit(this.state.description,140)}</p>
+        <p className="description">
+          {this.stringLimit(this.state.description, 140)}
+        </p>
         <p className="pages">Pages: {this.state.pageCount}</p>
         <img className="thumbnail" src={this.state.thumbnail} alt="" />
       </div>

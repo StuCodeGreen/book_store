@@ -3,14 +3,18 @@
 	text-align: center;
 }
 
+/* Global style  */
+
 p {
 	margin: 5px;
 	font-size: 12px;
 }
 
+/* Container layout */
+
 .header {
 	grid-area: header;
-	margin-bottom:0px;
+	margin-bottom: 0px;
 }
 
 .header img {
@@ -28,7 +32,7 @@ p {
 
 .featured-container {
 	grid-area: featured;
-	background: #63ADF2;
+	background: #63adf2;
 }
 
 .container {
@@ -36,17 +40,19 @@ p {
 	grid-template-columns: auto;
 	grid-template-rows: auto;
 	grid-template-areas:
-		"header"
-		"menu"
-		"info"
-		"featured"
-		"books"
-		"footer";
+		'header'
+		'menu'
+		'info'
+		'featured'
+		'books'
+		'footer';
 	grid-gap: 10px;
 }
 
+/* Featured books */
+
 .featured-card .thumbnail {
-	grid-area: thumbnail
+	grid-area: thumbnail;
 }
 
 .featured-card .title {
@@ -70,17 +76,19 @@ p {
 	grid-template-columns: auto;
 	grid-template-rows: auto;
 	grid-template-areas:
-		"thumbnail"
-		"title"
-		"author"
-		"pages"
-		"description";
+		'thumbnail'
+		'title'
+		'author'
+		'pages'
+		'description';
 	padding: 10px;
 	justify-items: center;
 	text-align: center;
-	background: #A7CCED;
+	background: #a7cced;
 	margin: 10px 20px;
 }
+
+/* Books */
 
 .book-cards .thumbnail {
 	grid-area: thumbnail;
@@ -107,23 +115,23 @@ p {
 	grid-template-columns: auto;
 	grid-template-rows: auto;
 	grid-template-areas:
-		"thumbnail title "
-		"thumbnail author "
-		"thumbnail pages "
-		"thumbnail description";
+		'thumbnail title '
+		'thumbnail author '
+		'thumbnail pages '
+		'thumbnail description';
 	margin: 10px 0px;
 	padding: 10px;
 	justify-items: start;
-	background: #A7CCED;
+	background: #a7cced;
 }
 
 #selected {
-	background:#545E75;
+	background: #545e75;
 }
 
 /* Navigation */
 
-.navigation{
+.navigation {
 	grid-area: menu;
 	display: flex;
 	flex-direction: column;
@@ -131,11 +139,11 @@ p {
 }
 
 .navigation ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  overflow: hidden;
-  background-color: #fff;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+	background-color: #fff;
 }
 
 .navigation ul li {
@@ -143,89 +151,88 @@ p {
 }
 
 .navigation li a {
-  display: block;
-  padding: 20px 20px;
+	display: block;
+	padding: 20px 20px;
 	text-decoration: none;
-	color:black;
+	color: black;
 }
 
 .navigation li a:hover,
 .navigation .menu-btn:hover {
-  background-color: #f4f4f4;
+	background-color: #a7cced;
 }
 
 /* menu */
 
 .navigation .menu {
 	width: 100%;
-  max-height: 0;
-  transition: max-height .3s ease-out;
+	max-height: 0;
+	transition: max-height 0.3s ease-out;
 }
 
 /* hamburger */
 
 .navigation .menu-icon {
-  cursor: pointer;
-  padding: 10px 20px;
-  position: relative;
-  user-select: none;
+	cursor: pointer;
+	padding: 10px 20px;
+	position: relative;
+	user-select: none;
 }
 
 .navigation .menu-icon .navicon {
-  background: #333;
-  display: block;
-  height: 2px;
-  position: relative;
-  transition: background .3s ease-out;
-  width: 18px;
+	background: #333;
+	display: block;
+	height: 2px;
+	position: relative;
+	transition: background 0.3s ease-out;
+	width: 18px;
 }
 
 .navigation .menu-icon .navicon:before,
 .navigation .menu-icon .navicon:after {
-  background: #333;
-  content: '';
-  display: block;
-  height: 100%;
-  position: absolute;
-  transition: all .3s ease-out;
-  width: 100%;
+	background: #333;
+	content: '';
+	display: block;
+	height: 100%;
+	position: absolute;
+	transition: all 0.3s ease-out;
+	width: 100%;
 }
 
 .navigation .menu-icon .navicon:before {
-  top: 5px;
+	top: 5px;
 }
 
 .navigation .menu-icon .navicon:after {
-  top: -5px;
+	top: -5px;
 }
 
 /* hamburger btn */
 
 .navigation .menu-btn {
-  display: none;
+	display: none;
 }
 
-.navigation .menu-btn:checked ~ .menu {
-  max-height: 240px;
+.navigation .menu-btn:checked~.menu {
+	max-height: 240px;
 }
 
-.navigation .menu-btn:checked ~ .menu-icon .navicon {
-  background: transparent;
+.navigation .menu-btn:checked~.menu-icon .navicon {
+	background: transparent;
 }
 
-.navigation .menu-btn:checked ~ .menu-icon .navicon:before {
-  transform: rotate(-45deg);
+.navigation .menu-btn:checked~.menu-icon .navicon:before {
+	transform: rotate(-45deg);
 }
 
-.navigation .menu-btn:checked ~ .menu-icon .navicon:after {
-  transform: rotate(45deg);
+.navigation .menu-btn:checked~.menu-icon .navicon:after {
+	transform: rotate(45deg);
 }
 
-.navigation .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
-.navigation .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
-  top: 0;
+.navigation .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+.navigation .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+	top: 0;
 }
-
 
 /* M E D I A  Q U E R I E S */
 
@@ -237,7 +244,6 @@ p {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-
 	.header img {
 		display: inline;
 	}
@@ -245,14 +251,19 @@ p {
 	.menu {
 		display: flex;
 	}
+
+	/* Container layout */
+
 	.container {
 		grid-template-areas:
-			"header header header"
-			"menu menu menu"
-			"info info info"
-			"books books featured"
-			"footer footer footer";
+			'header header header'
+			'menu menu menu'
+			'info info info'
+			'books books featured'
+			'footer footer footer';
 	}
+
+	/* Books */
 
 	.book-cards {
 		display: grid;
@@ -264,6 +275,8 @@ p {
 		margin: 5px;
 	}
 
+	/* Featured books  */
+
 	.featured-container {
 		margin: 5px;
 		width: 250px;
@@ -271,13 +284,14 @@ p {
 
 	.featured-card div {
 		grid-template-areas:
-			"title"
-			"author"
-			"pages"
-			"description"
-			"thumbnail";
+			'title'
+			'author'
+			'pages'
+			'description'
+			'thumbnail';
 	}
 
+	/* Global style  */
 	p {
 		margin: 5px;
 		font-size: 15px;
@@ -289,17 +303,17 @@ p {
 		width: auto;
 	}
 
-  .navigation li a {
-    padding: 20px 30px;
-  }
-  .navigation .menu {
+	.navigation li a {
+		padding: 20px 30px;
+	}
+
+	.navigation .menu {
 		flex-direction: row;
-    justify-content: center;
-    max-height: none;
-  }
-  .navigation .menu-icon {
-    display: none;
-  }
+		justify-content: center;
+		max-height: none;
+	}
+
+	.navigation .menu-icon {
+		display: none;
+	}
 }
-
-
