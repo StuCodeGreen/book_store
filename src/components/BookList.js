@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import BookItem from './BookItem';
 import FeaturedItem from './FeaturedItem';
+import './BookList.css';
 
 class BookList extends React.Component {
   constructor(props) {
@@ -26,11 +27,17 @@ class BookList extends React.Component {
     const featuredBooks = this.state.featured;
 
     return (
-      <div>
+      <div className="container">
+				<h1 className="header">The Book Store</h1>
+				<div className="main">
         {books.map(book => (
-          <BookItem key={book.id} volumeInfo={book.volumeInfo} id={book.id} />
+				
+ 						<BookItem key={book.id} volumeInfo={book.volumeInfo} id={book.id} />
+				
+         
         ))}
-
+					</div>
+					<div  className="featured">
         {featuredBooks.map(featuredBook => (
           <FeaturedItem
             key={featuredBook.id}
@@ -38,6 +45,7 @@ class BookList extends React.Component {
             id={featuredBook.id}
           />
         ))}
+				</div>
       </div>
     );
   }
