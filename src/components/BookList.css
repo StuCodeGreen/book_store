@@ -2,12 +2,12 @@
 	grid-area:header
 }
 
-.main {
-	grid-area:main;
+.books-container {
+	grid-area:books;
 	
 }
 
-.featured-container{
+.featured-container {
 	grid-area:featured;
 	background:violet;	
 }
@@ -19,7 +19,7 @@
 	grid-template-areas: 
 	"header"
 	"featured"
-	"main"
+	"books"
 	"footer";
 	grid-gap:10px;
 	/* margin: 5px 50px; */
@@ -60,6 +60,45 @@
 	justify-items: center;
 }
 
+.books-card .thumbnail {
+	grid-area:thumbnail
+}
+
+.books-card .title {
+	grid-area:title;	
+}
+
+.books-card .author{
+	grid-area:author;
+}
+.books-card .pages{
+	grid-area:pages;
+}
+
+.books-card .description{
+	grid-area:description;
+}
+
+.books-card div{
+	display:grid;
+  grid-template-columns: auto;
+	grid-template-rows: auto;
+	grid-template-areas: 
+	"thumbnail title "
+	"thumbnail author "
+	"thumbnail pages "
+	"thumbnail description";
+	margin: 10px 0px;
+	padding: 10px;
+	justify-items: start;
+	/* align-items: center; */
+}
+
+ p {
+	margin:5px;
+	font-size:12px;
+}
+
 /* ####################################################
 M E D I A  Q U E R I E S */
 
@@ -79,7 +118,7 @@ M E D I A  Q U E R I E S */
 		grid-template-areas: 
 		"header header"
 		/* "menu menu menu menu" */
-    "main featured"
+    "books featured"
     "footer footer";
 	}
 }

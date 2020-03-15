@@ -29,13 +29,15 @@ class BookList extends React.Component {
     return (
       <div className="container">
 				<h1 className="header">The Book Store</h1>
-				<div className="main">
+				<div className="books-container">
+					<div className="books-card">
         {books.map(book => (
 				
  						<BookItem key={book.id} volumeInfo={book.volumeInfo} id={book.id} />
 				
          
         ))}
+				</div>
 					</div>
 					<div  className="featured-container">
 						<h2>Featured</h2>

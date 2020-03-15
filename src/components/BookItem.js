@@ -69,7 +69,7 @@ export default class BookItem extends React.Component {
         <p className="title">{this.state.title} {this.state.subtitle}</p>
         <p className="authors">{this.state.authors}</p>
         <p className="description">{this.stringLimit(this.state.description,140)}</p>
-        <p className="pages">{this.state.pageCount}</p>
+        <p className="pages">Pages: {this.state.pageCount}</p>
         <img className="thumbnail" src={this.state.thumbnail} alt="" />
       </div>
     );
