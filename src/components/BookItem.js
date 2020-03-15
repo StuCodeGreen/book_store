@@ -64,7 +64,7 @@ export default class BookItem extends React.Component {
     return (
       <div
         onClick={this.select}
-        className={this.state.select ? 'selected' : null}
+        id={this.state.select ? 'selected' : null}
       >
         <p className="title">{this.state.title} {this.state.subtitle}</p>
         <p className="authors">{this.state.authors}</p>

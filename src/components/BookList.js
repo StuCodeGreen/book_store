@@ -30,7 +30,7 @@ class BookList extends React.Component {
       <div className="container">
 				<h1 className="header">The Book Store</h1>
 				<div className="books-container">
-					<div className="books-card">
+					<div className="book-cards">
         {books.map(book => (
 				
  						<BookItem key={book.id} volumeInfo={book.volumeInfo} id={book.id} />

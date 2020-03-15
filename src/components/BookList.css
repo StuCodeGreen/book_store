@@ -1,3 +1,6 @@
+.container h1, .featured-container h2 {
+	text-align: center;
+}
 .header {
 	grid-area:header
 }
@@ -9,7 +12,7 @@
 
 .featured-container {
 	grid-area:featured;
-	background:violet;	
+	background:violet;
 }
 
 .container {
@@ -25,6 +28,10 @@
 	/* margin: 5px 50px; */
 }
 
+.featured-card {
+	background: red;
+	margin: 10px 20px;
+}
 
 .featured-card .thumbnail {
 	grid-area:thumbnail
@@ -55,31 +62,31 @@
 	"author"
 	"pages"
 	"description";
-	margin: 10px 20px;
 	padding: 10px;
 	justify-items: center;
+	text-align: center;
 }
 
-.books-card .thumbnail {
-	grid-area:thumbnail
+.book-cards .thumbnail {
+	grid-area:thumbnail;
 }
 
-.books-card .title {
+.book-cards .title {
 	grid-area:title;	
 }
 
-.books-card .author{
+.book-cards .author{
 	grid-area:author;
 }
-.books-card .pages{
+.book-cards .pages{
 	grid-area:pages;
 }
 
-.books-card .description{
+.book-cards .description{
 	grid-area:description;
 }
 
-.books-card div{
+.book-cards div{
 	display:grid;
   grid-template-columns: auto;
 	grid-template-rows: auto;
@@ -91,7 +98,7 @@
 	margin: 10px 0px;
 	padding: 10px;
 	justify-items: start;
-	/* align-items: center; */
+	background: red;
 }
 
  p {
@@ -99,8 +106,7 @@
 	font-size:12px;
 }
 
-/* ####################################################
-M E D I A  Q U E R I E S */
+/* M E D I A  Q U E R I E S */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {  
@@ -116,10 +122,21 @@ M E D I A  Q U E R I E S */
 @media (min-width: 992px) { 
 	.container {
 		grid-template-areas: 
-		"header header"
+		"header header header"
 		/* "menu menu menu menu" */
-    "books featured"
-    "footer footer";
+    "books books featured"
+    /* "books books featured" */
+    "footer footer footer";
+	}
+
+	.book-cards {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-auto-rows: auto;
+	}
+
+	.book-cards div {
+		margin:5px;
 	}
 }
  
@@ -128,13 +145,4 @@ M E D I A  Q U E R I E S */
     
 }
 
-/* ::::::::::::::::::::::::::::::::::::::::::::::::::::
-Custom media queries */
-
- 
-/* Set width to make card deck cards 100% width */
-@media (max-width: 950px) { 
- 
-}
- 
  
