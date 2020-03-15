@@ -3,7 +3,6 @@ import axios from 'axios';
 import BookItem from './BookItem';
 import FeaturedItem from './FeaturedItem';
 import './BookList.css';
-import BookLogo from '../book.svg';
 
 class BookList extends React.Component {
   constructor(props) {
@@ -29,7 +28,7 @@ class BookList extends React.Component {
 
     return (
       <div className="container">
-        <h1 className="header"><img src={BookLogo} alt="Book logo" width="50"/> The Book Store</h1>
+        <h1 className="header"><img src="./book.svg" alt="Book logo" width="50"/> The Book Store</h1>
 			
 				<nav className="navigation">
 				<input class="menu-btn" type="checkbox" id="menu-btn" />
