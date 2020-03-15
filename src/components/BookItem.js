@@ -66,12 +66,11 @@ export default class BookItem extends React.Component {
         onClick={this.select}
         className={this.state.select ? 'selected' : null}
       >
-        <p>{this.state.title}</p>
-        <p>{this.state.subtitle}</p>
-        <p>{this.state.authors}</p>
-        <p>{this.stringLimit(this.state.description,140)}</p>
-        <p>{this.state.pageCount}</p>
-        <img src={this.state.thumbnail} alt="" />
+        <p className="title">{this.state.title} {this.state.subtitle}</p>
+        <p className="authors">{this.state.authors}</p>
+        <p className="description">{this.stringLimit(this.state.description,140)}</p>
+        <p className="pages">{this.state.pageCount}</p>
+        <img className="thumbnail" src={this.state.thumbnail} alt="" />
       </div>
     );
   }

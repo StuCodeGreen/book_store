@@ -4,13 +4,12 @@
 
 .main {
 	grid-area:main;
-	height: 100%;
 	
 }
 
-.featured{
+.featured-container{
 	grid-area:featured;
-	height: 100%;
+	background:violet;	
 }
 
 .container {
@@ -22,8 +21,43 @@
 	"featured"
 	"main"
 	"footer";
-	grid-gap: 10px;
-	margin: 5px 50px;
+	grid-gap:10px;
+	/* margin: 5px 50px; */
+}
+
+
+.featured-card .thumbnail {
+	grid-area:thumbnail
+}
+
+.featured-card .title {
+	grid-area:title;	
+}
+
+.featured-card .author{
+	grid-area:author;
+}
+.featured-card .pages{
+	grid-area:pages;
+}
+
+.featured-card .description{
+	grid-area:description;
+}
+
+.featured-card div{
+	display:grid;
+  grid-template-columns: auto;
+	grid-template-rows: auto;
+	grid-template-areas: 
+	"thumbnail"
+	"title"
+	"author"
+	"pages"
+	"description";
+	margin: 10px 20px;
+	padding: 10px;
+	justify-items: center;
 }
 
 /* ####################################################

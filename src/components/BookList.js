@@ -37,7 +37,8 @@ class BookList extends React.Component {
          
         ))}
 					</div>
-					<div  className="featured">
+					<div  className="featured-container">
+						<h2>Featured</h2>
         {featuredBooks.map(featuredBook => (
           <FeaturedItem
             key={featuredBook.id}
