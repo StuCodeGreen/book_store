@@ -28,7 +28,7 @@ p {
 
 .featured-container {
 	grid-area: featured;
-	background: violet;
+	background: #63ADF2;
 }
 
 .container {
@@ -78,7 +78,7 @@ p {
 	padding: 10px;
 	justify-items: center;
 	text-align: center;
-	background: red;
+	background: #A7CCED;
 	margin: 10px 20px;
 }
 
@@ -114,11 +114,11 @@ p {
 	margin: 10px 0px;
 	padding: 10px;
 	justify-items: start;
-	background: red;
+	background: #A7CCED;
 }
 
 #selected {
-	background:pink;
+	background:#545E75;
 }
 
 /* Navigation */
