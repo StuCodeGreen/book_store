@@ -31,9 +31,9 @@ class BookList extends React.Component {
         <h1 className="header"><img src="./book.png" alt="Book logo" width="50"/> The Book Store</h1>
 			
 				<nav className="navigation">
-				<input class="menu-btn" type="checkbox" id="menu-btn" />
-				<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
-				<ul class="menu">
+				<input className="menu-btn" type="checkbox" id="menu-btn" />
+				<label className="menu-icon" htmlFor="menu-btn"><span className="navicon"></span></label>
+				<ul className="menu">
 					<li><a href="#home">Home</a></li>
 					<li><a href="#books">Books</a></li>
 					<li><a href="#magazines">Magazines</a></li>
