@@ -3,6 +3,7 @@ import axios from 'axios';
 import BookItem from './BookItem';
 import FeaturedItem from './FeaturedItem';
 import './BookList.css';
+import BookLogo from '../book.svg';
 
 class BookList extends React.Component {
   constructor(props) {
@@ -28,19 +29,24 @@ class BookList extends React.Component {
 
     return (
       <div className="container">
-        <h1 className="header">The Book Store</h1>
+        <h1 className="header"><img src={BookLogo} alt="Book logo" width="50"/> The Book Store</h1>
 			
 				<nav className="navigation">
 				<input class="menu-btn" type="checkbox" id="menu-btn" />
 				<label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
 				<ul class="menu">
-					<li><a href="#work">Our Work</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#careers">Careers</a></li>
-					<li><a href="#contact">Contact</a></li>
+					<li><a href="#home">Home</a></li>
+					<li><a href="#books">Books</a></li>
+					<li><a href="#magazines">Magazines</a></li>
+					<li><a href="#ebooks">E-Books</a></li>
+					<li><a href="#accounts">Accounts</a></li>
 				</ul>
 			</nav>
-			
+				<section className="info">
+					<p>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus tenetur perferendis quibusdam optio fugit doloribus sapiente saepe commodi laborum praesentium odit assumenda autem earum, veniam eius nihil ullam nesciunt debitis placeat quia, id minima cupiditate veritatis? Consequuntur et nisi perferendis laudantium voluptas sapiente.
+					</p>
+				</section>
         <div className="books-container">
           <div className="book-cards">
             {books.map(book => (

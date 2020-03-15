@@ -13,8 +13,13 @@ p {
 	margin-bottom:0px;
 }
 
-.navigation{
-	grid-area: menu;
+.header img {
+	display: none;
+}
+
+.info {
+	grid-area: info;
+	padding: 0px 10px;
 }
 
 .books-container {
@@ -33,6 +38,7 @@ p {
 	grid-template-areas:
 		"header"
 		"menu"
+		"info"
 		"featured"
 		"books"
 		"footer";
@@ -117,6 +123,13 @@ p {
 
 /* Navigation */
 
+.navigation{
+	grid-area: menu;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 .navigation ul {
   margin: 0;
   padding: 0;
@@ -126,7 +139,6 @@ p {
 }
 
 .navigation ul li {
-	width: 100%;
 	text-align: center;
 }
 
@@ -145,9 +157,7 @@ p {
 /* menu */
 
 .navigation .menu {
-	display: flex;
-	flex-direction: column;
-	align-items: center;	
+	width: 100%;
   max-height: 0;
   transition: max-height .3s ease-out;
 }
@@ -156,8 +166,6 @@ p {
 
 .navigation .menu-icon {
   cursor: pointer;
-	display: flex;
-	justify-content: center;
   padding: 10px 20px;
   position: relative;
   user-select: none;
@@ -229,6 +237,11 @@ p {
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+
+	.header img {
+		display: inline;
+	}
+
 	.menu {
 		display: flex;
 	}
@@ -236,6 +249,7 @@ p {
 		grid-template-areas:
 			"header header header"
 			"menu menu menu"
+			"info info info"
 			"books books featured"
 			"footer footer footer";
 	}
@@ -270,7 +284,7 @@ p {
 	}
 
 	/* Navigation */
-	
+
 	.navigation ul li {
 		width: auto;
 	}
