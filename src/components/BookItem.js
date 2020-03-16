@@ -57,7 +57,7 @@ export default class BookItem extends React.Component {
     }
 
     if (str.length > limit) {
-      return str.substring(0, limit);
+      return str.substring(0, limit) + "...";
     } else {
       return str;
     }
