@@ -125,7 +125,7 @@ p {
 	background: #a7cced;
 }
 
-#selected {
+.book-cards .is-selected, .featured-card .is-selected {
 	background: #545e75;
 }
 
